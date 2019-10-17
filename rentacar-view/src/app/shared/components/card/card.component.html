@@ -1,0 +1,12 @@
+<div [@flyLeftRigth]="left ? 'next' : 'previous'" [@flyLeftRigth]="!left" class="card text-center">
+    <div class="card-body">
+        <ng-content select="[header]"></ng-content>
+    </div>
+    <ul *ngIf="placa || vaga" class="list-group list-group-flush">
+        <li class="list-group-item">{{ vaga | uppercase }}</li>
+        <li *ngIf="placa" class="list-group-item">{{ placa }}</li>
+    </ul>
+    <div class="card-body">
+        <ng-content select="[body]"></ng-content>
+    </div>
+</div>

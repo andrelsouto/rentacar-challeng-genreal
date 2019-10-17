@@ -1,0 +1,28 @@
+<nav class="navbar navbar-ligth bg-ligth border-bottom side-bar-icon">
+    <a class="navbar-brand">
+        <i class="fa fa-bars" (click)="toggleMenu()"></i>
+    </a>
+</nav>
+<div @slideDownUp *ngIf="showMenu" class="col-12 col-md-3 col-xl-3 sticky-top float-left border-right shadow side-bar">
+    <ul class="nav-tabs list-unstyled">
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/vagas" routerLinkActive="active">Vagas</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/cadastro" role="button" aria-haspopup="true" aria-expanded="false" href="#" routerLinkActive="active">Cadastrar</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" routerLink="/cadastro/setor" routerLinkActive="active" href="#">Setor</a>
+				<a class="dropdown-item" routerLink="/cadastro/vaga" routerLinkActive="active" href="#">Vaga</a>
+			</div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/quem/somos" routerLinkActive="active">Quem Somos</a> 
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/Contato" routerLinkActive="active">Contato</a>
+        </li>
+    </ul>
+</div>
+<div *ngIf="showBody" class="col-12 col-md-9 col-xl-9 float-rigth d-flex justify-content-center">
+    <router-outlet></router-outlet>
+</div>

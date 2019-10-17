@@ -1,0 +1,8 @@
+.card {
+    width: 15rem;
+    height: 18em;
+}
+
+:host(.ocupada) .card {
+    border-color: red;
+}

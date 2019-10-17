@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar rentacar-api/target/rentacar-api-0.0.1-SNAPSHOT.jar
