@@ -14,14 +14,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc
-public class DefaultConfiguration implements WebMvcConfigurer {
+public class DefaultConfiguration {
 
-    @Override
-    @Profile("dev")
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("*");
-    }
 
     @Bean
     public MessageSource messageSource() {
