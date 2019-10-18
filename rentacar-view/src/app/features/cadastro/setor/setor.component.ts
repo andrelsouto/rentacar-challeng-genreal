@@ -11,6 +11,8 @@ import { SetorService } from 'src/app/services/setor.service';
 export class SetorComponent implements OnInit {
 
   setor: Setor = { };
+  css: string;
+  message;
 
   constructor(private setService: SetorService) { }
 
@@ -19,7 +21,14 @@ export class SetorComponent implements OnInit {
 
   cadastrar(setor: Setor) {
 
-    this.setService.cadastrarSetor(setor).subscribe();
+    this.setService.cadastrarSetor(setor).subscribe(() => {
+      this.setor = {};
+      this.css = 'alert alert-success';
+      this.message = 'Cadastro efetuado com sucesso';
+    }, () => {
+      this.css = 'alert alert-danger';
+      this.message = 'Ocorreu um erro ao salvar.';
+    });
   }
 
 }

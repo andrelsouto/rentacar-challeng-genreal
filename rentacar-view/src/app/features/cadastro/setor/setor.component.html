@@ -1,7 +1,10 @@
+<div *ngIf="message" [ngClass]="css" role="alert">
+  {{ message }}
+</div>
 <form #form="ngForm" (ngSubmit)="cadastrar(setor)">
-    <div class="form-group">
-      <label for="descricao">Descrição</label>
-      <input type="text" [(ngModel)]="setor.descricao" name="descricao" class="form-control" id="descricao">
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
+  <div class="form-group">
+    <label for="descricao">Descrição</label>
+    <input type="text" [(ngModel)]="setor.descricao" name="descricao" class="form-control" id="descricao">
+  </div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
