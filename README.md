@@ -35,9 +35,27 @@ Métodos a serem criados:
 - Monitoramento da API
 - Front-end em um framework à sua escolha
 
-# Como entregar o desafio?
-- Faça um fork desse repositório e mande o link de clonagem para rh@vsoft.com.br.
-- Troque o item final (*Como entregar o desafio?*) por *Detalhe da solução*, onde você explicará as decisões de arquitetura que tomou e como executar seu projeto.
-- Faça ao menos um *push* ou *pull request* no seu fork com o código fonte da sua solução até a data solicitada por e-mail.
-- Caso seja selecionado, você será convocado para apresentar sua solução presencialmente.
-- Em caso de vaga de front-end, e que não se tenha conhecimento de back-end, pode-se usar um serviço de mocking gratuito como [mockAPI](https://www.mockapi.io) para simular o back-end.
+# Detalhe da Solução
+Repositório do projeto: https://github.com/andrelsouto/rentacar-challeng-genreal
+Rodando no heroku link: https://rentacar-challenge-general.herokuapp.com/#/cadastro/setor
+Projeto maven multi-modular, um módulo encontra-se o front-end feito em Angular 8 e o outro módulo a api feita em Java com Spring.
+
+O link da documentação encontra-se no menu da aplicação.
+
+API - Feita em Java com Spring, projeto usa os Profiles do Spring para não precisar mudar configuração quando rodar local ou subir no servidor.
+Front-end - feito em Angular 8, projeto usa os envrionments para configurar urls e não precisar mudar ao subir no servidor.
+
+Rodar a API local basta, resolver as dependencias através do maven, e rodar a Classe principal do projeto.
+
+    -Requisitos:
+      Java 8
+      Maven
+    Este projeto usa banco de dados PostgreSQL 9.x, está apontando para um banco do heroku, caso queira apontar localmente, basta mudar o arquivo
+    db.properties localizado na pasta resources, as credenciais do banco precisam ter permissao para criar as tabelas no caso de querer apontar para
+    um banco local. 
+
+Rodar o Front - instalar as dependencias através do comando 'npm install' e executar o comando 'ng serve' na raiz do projeto rentacar-view
+
+    -Requisitos
+        Node 10
+        Angular/cli
