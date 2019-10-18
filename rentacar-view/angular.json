@@ -35,7 +35,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "src/main/resources/dist/rentacar",
+            "outputPath": "src/main/web/dist/rentacar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,7 +72,6 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "baseHref": "/rentacar/",
               "buildOptimizer": true,
               "budgets": [
                 {

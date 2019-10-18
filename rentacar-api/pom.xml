@@ -30,6 +30,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 			<exclusions>
 				<exclusion>
@@ -104,7 +109,7 @@
 							<outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.parent.basedir}/rentacar-view/src/main/resources/dist/rentacar/</directory>
+									<directory>${project.parent.basedir}/rentacar-view/src/main/web/dist/rentacar/</directory>
 								</resource>
 							</resources>
 						</configuration>
