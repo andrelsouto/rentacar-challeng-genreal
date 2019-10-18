@@ -1,0 +1,17 @@
+<div *ngIf="message" [ngClass]="css" role="alert">
+    {{ message }}
+</div>
+<form #form="ngForm" (ngSubmit)="cadastrar(vaga)">
+    <div class="form-group">
+        <label for="setor">Setor</label>
+        <select id="setor" (ngModelChange)="select(sele.value)" #sele [(ngModel)]="setor" name="setor" class="form-control">
+            <option selected>selecione...</option>
+            <option *ngFor="let item of setores" [value]="item.id">{{ item.descricao }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" [(ngModel)]="vaga.descricao" name="descricao" class="form-control" id="descricao">
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
