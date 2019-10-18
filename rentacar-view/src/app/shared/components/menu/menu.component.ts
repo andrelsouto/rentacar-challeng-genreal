@@ -1,6 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
+import { environment } from 'src/environments/environment';
 import { slideDownUpAnimation } from '../../animations/slide-down-up.animation';
+
+const doc_url = environment.documentacao_url;
 
 @Component({
   selector: 'rent-menu',
@@ -12,6 +15,7 @@ export class MenuComponent implements OnInit {
 
   showMenu = true;
   showBody = false;
+  url = doc_url;
 
   constructor() { }
 
