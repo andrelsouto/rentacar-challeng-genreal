@@ -1,9 +1,9 @@
-import { Setor } from './../../models/setor';
-import { SetorService } from '../../services/setor.service';
-import { Component, OnInit, HostListener } from '@angular/core';
-
-import { borderColorAnimation } from 'src/app/shared/animations/border-color.animation';
 import { ActivatedRoute } from '@angular/router';
+import { OnInit, Component, HostListener } from '@angular/core';
+
+
+import { Setor } from './../../models/setor';
+import { borderColorAnimation } from 'src/app/shared/animations/border-color.animation';
 
 @Component({
   selector: 'rent-vagas',
