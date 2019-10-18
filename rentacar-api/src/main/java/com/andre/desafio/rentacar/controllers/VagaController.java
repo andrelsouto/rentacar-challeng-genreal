@@ -5,6 +5,7 @@ import com.andre.desafio.rentacar.exceptions.CustomException;
 import com.andre.desafio.rentacar.models.Vaga;
 import com.andre.desafio.rentacar.models.dto.VagaDTO;
 import com.andre.desafio.rentacar.services.VagaService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class VagaController extends GenericController<VagaService> {
     @PostMapping("cadastrar")
     public ResponseEntity<Vaga> cadastrarVaga(@RequestBody @Valid Vaga vaga) {
 
-        return ResponseEntity.ok(getService().cadastrarVaga(vaga));
+        return ResponseEntity.status(HttpStatus.CREATED).body(getService().cadastrarVaga(vaga));
     }
 
     @GetMapping("listar")
