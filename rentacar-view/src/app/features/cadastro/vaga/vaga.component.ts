@@ -39,8 +39,6 @@ export class VagaComponent implements OnInit {
   }
 
   select(id) {
-    console
-    .log(id);
     this.vaga.setor.id = id;
   }
 
