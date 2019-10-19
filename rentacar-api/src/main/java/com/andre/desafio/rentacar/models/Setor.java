@@ -18,8 +18,10 @@ public class Setor extends AbstractEntity {
     @NotNull(message = "{notnull}")
     @NotBlank(message = "{notblank}")
     private String descricao;
+
     @OneToMany(mappedBy = "setor", fetch = FetchType.LAZY)
     private List<Vaga> vagas;
+
 
     public String getDescricao() {
         return descricao;

@@ -6,3 +6,7 @@
 :host(.ocupada) .card {
     border-color: red;
 }
+
+:host(.livre) .card {
+    border-color: green;
+}

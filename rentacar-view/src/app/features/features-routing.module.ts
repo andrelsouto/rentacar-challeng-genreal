@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: 'vagas', loadChildren: () => import('./vagas/vagas.module').then(mod => mod.VagasModule) },
   { path: 'cadastro', loadChildren: () => import('./cadastro/cadastro.module').then(mod => mod.CadastroModule) },
+  { path: 'pagamento', loadChildren: () => import('./pagamento/pagamento.module').then(mod => mod.PagamentoModule) },
   { path: '', redirectTo: 'vagas', pathMatch: 'full' }
 ];
 

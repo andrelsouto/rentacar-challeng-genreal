@@ -1,9 +1,10 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OnInit, Component, HostListener } from '@angular/core';
 
 
 import { Setor } from './../../models/setor';
 import { borderColorAnimation } from 'src/app/shared/animations/border-color.animation';
+import { Vaga } from 'src/app/models/vaga';
 
 @Component({
   selector: 'rent-vagas',
@@ -17,12 +18,24 @@ export class VagasComponent implements OnInit {
   perPage: number;
   left = true;
 
-  constructor(private activateRoute: ActivatedRoute) { }
+  constructor(private activateRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.vagas = this.activateRoute.snapshot.data['vagas'];
     this.vagas.forEach(v => v.setor_page = 1);
     this.setNumberOfPage();
+  }
+
+  atulizarVaga(vaga: Vaga) {
+    this.vagas.forEach((setor) => {
+      setor.vagas.forEach((vagaSetor) => {
+        if (vagaSetor.id === vaga.id) {
+          vagaSetor.situacao = vaga.situacao;
+          vagaSetor.placaVeiculo = vaga.placaVeiculo;
+          vagaSetor.dhOcupacao = vaga.dhOcupacao;
+        }
+      })
+    });
   }
 
   @HostListener('window:resize') onResize() {

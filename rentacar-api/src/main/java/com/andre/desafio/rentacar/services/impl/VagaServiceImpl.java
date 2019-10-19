@@ -81,7 +81,11 @@ public class VagaServiceImpl extends GenericServiceImpl<VagaRepository> implemen
 
         v.setSituacao(SituacaoVagaEnum.OCUPADA);
         v.setDhOcupacao(Calendar.getInstance());
-        return getRepository().save(v);
+        v.setPlacaVeiculo(vaga.getPlacaVeiculo());
+        Vaga retorno = getRepository().save(v);
+        retorno.getSetor().setVagas(null);
+        retorno.setPagamentos(null);
+        return retorno;
     }
 
     @Override
@@ -95,6 +99,7 @@ public class VagaServiceImpl extends GenericServiceImpl<VagaRepository> implemen
         vagaConsulta.setSituacao(SituacaoVagaEnum.LIVRE);
         vagaConsulta.setDhOcupacao(null);
         vagaConsulta.setPlacaVeiculo(null);
+        vagaConsulta.getSetor().setVagas(null);
         return getRepository().save(vagaConsulta);
     }
 

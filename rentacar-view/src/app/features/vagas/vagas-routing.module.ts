@@ -7,9 +7,11 @@ import { SetorResolver } from 'src/app/services/resolvers/setor.resolver';
 
 const routes: Routes = [
   {
-    path: '', children: [{
-      path: '', component: VagasComponent, resolve: { vagas: SetorResolver }
-    }]
+    path: '', children: [
+      {
+        path: '', component: VagasComponent, resolve: { vagas: SetorResolver }
+      }
+  ]
   }
 ];
 

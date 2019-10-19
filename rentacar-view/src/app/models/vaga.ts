@@ -9,4 +9,5 @@ export interface Vaga {
     dhOcupacao?: string;
     situacao?: any;
     ocupar?: boolean;
+    placaVeiculo?: string;
 }

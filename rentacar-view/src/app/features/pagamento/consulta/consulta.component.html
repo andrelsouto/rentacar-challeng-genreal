@@ -1,0 +1,27 @@
+<rent-date-range-select class="w-50" [(periodo)]="consultaRange" (consultar)="consutlar()"></rent-date-range-select>
+
+<table *ngIf="pagamentos && pagamentos.length > 0" class="table w-100">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Data do Pagamento</th>
+        <th scope="col">Valor (R$)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pagamento of pagamentos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; index as i">
+        <th scope="row">{{ i }}</th>
+        <td>{{ pagamento.dtPagamento }}</td>
+        <td>{{ pagamento.valor | currency : 'R$' }}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total: {{ valorTotal() | currency : 'R$' }}</td>
+        </tr>
+        <ngb-pagination
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="pagamentos.length"></ngb-pagination>
+    </tfoot>
+</table>

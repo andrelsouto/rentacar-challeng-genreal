@@ -1,16 +1,24 @@
 <div *ngFor="let setor of vagas" class="card-group text-center">
     <button [disabled]="setor.setor_page === 1" type="button" class="btn btn-outline-primary" (click)="previousPage(setor)"><i class="fa fa-angle-left"></i></button>
     <ng-template ngFor let-v [ngForOf]="setor.vagas | perPage : setor.vagas.length : perPage : setor.setor_page" let-i="index">
-        <rent-card *ngIf="!v.ocupar && v.situacao.codigo === 0; else elseBlock" [vaga]="v.descricao" [left]="left" class="p-1">
-            <h5 class="card-title" header>Vaga</h5>
-            <button (click)="exibirCadastro(v)" class="btn btn-success" body>Ocupar</button>
+        <rent-card *ngIf="!v.ocupar && v.situacao.codigo === 0; else elseBlock" [vaga]="v.descricao" [left]="left" class="p-1 livre">
+            <div header>
+                <h5 class="card-title" header>Vaga</h5>
+                <h5 class="card-title text-success" header>{{ v.situacao.descricao }}</h5>
+            </div>
+            <button (click)="exibirCadastro(v)" class="btn btn-info" body>Ocupar</button>
         </rent-card>
         <rent-card *ngIf="!v.ocupar && v.situacao.codigo === 1" [vaga]="v.descricao" [left]="left" class="p-1 ocupada">
-            <h5 class="card-title" header>Vaga</h5>
-            <button class="btn btn-success" body>Liberar</button>
+            <div header>
+                <h5 class="card-title">Vaga</h5>
+                <h6  class="card-subtitle mb-2 text-muted">{{ v.placaVeiculo }}</h6>
+                <h6  class="card-subtitle mb-2 text-muted">Entrada: {{ v.dhOcupacao }}</h6>
+                <h5 class="card-title text-danger">{{ v.situacao.descricao }}</h5>
+            </div>
+            <rent-liberar [vaga]="v" (liberacao)="atulizarVaga($event)" body></rent-liberar>
         </rent-card>
         <ng-template #elseBlock>
-            <rent-cadastro *ngIf="v.situacao.codigo === 0"  (voltar)="v.ocupar = !v.ocupar" class="p-1"></rent-cadastro>
+            <rent-cadastro *ngIf="v.situacao.codigo === 0" [vaga]="v" (ocupacao)="atulizarVaga($event)" (voltar)="v.ocupar = !v.ocupar" class="p-1"></rent-cadastro>
         </ng-template>
     </ng-template>
     <button [disabled]="setor.max_pages === setor.setor_page" type="button" class="btn btn-outline-primary" (click)="nextPage(setor)"><i class="fa fa-angle-right"></i></button>

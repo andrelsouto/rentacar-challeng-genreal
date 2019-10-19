@@ -1,7 +1,10 @@
 package com.andre.desafio.rentacar.models.dto;
 
 import com.andre.desafio.rentacar.enums.SituacaoVagaEnum;
+import com.andre.desafio.rentacar.utils.SituacaoDeserialize;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -10,10 +13,14 @@ public class VagaDTO  extends AbstractDTO {
     private static final long serialVersionUID = -7190999254456170853L;
 
     private String descricao;
+
     private SetorDTO setor;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", locale = "pt-br", timezone = "America/Recife")
     private Calendar dhOcupacao;
+
     @JsonFormat(shape = JsonFormat.Shape.OBJECT)
+    @JsonDeserialize(using = SituacaoDeserialize.class)
     private SituacaoVagaEnum situacao;
 
     private String placaVeiculo;
