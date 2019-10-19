@@ -4,7 +4,11 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
 import { Vaga } from './../models/vaga';
 
+<<<<<<< HEAD
 const api_url = environment.api_url;
+=======
+const api_url = environment.api_url + 'vaga/';
+>>>>>>> ajustes
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +18,14 @@ export class VagaService {
   constructor(private httpClient: HttpClient) { }
 
   cadastrar(vaga: Vaga) {
+<<<<<<< HEAD
     return this.httpClient.post<Vaga>(api_url + 'vaga/cadastrar', vaga);
+=======
+    return this.httpClient.post<Vaga>(api_url + 'cadastrar', vaga);
+  }
+
+  ocupar(vaga: Vaga) {
+    return this.httpClient.post<Vaga>(api_url + 'estacionar', vaga);
+>>>>>>> ajustes
   }
 }

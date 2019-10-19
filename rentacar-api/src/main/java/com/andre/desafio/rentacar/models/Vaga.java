@@ -1,9 +1,17 @@
 package com.andre.desafio.rentacar.models;
 
 import com.andre.desafio.rentacar.enums.SituacaoVagaEnum;
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.Where;
 import springfox.documentation.annotations.ApiIgnore;
+=======
+import com.andre.desafio.rentacar.utils.SituacaoDeserialize;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.annotations.Where;
+>>>>>>> ajustes
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -21,6 +29,7 @@ public class Vaga extends AbstractEntity {
     @NotNull(message = "{notnull}")
     @NotBlank(message = "{notblank}")
     private String descricao;
+<<<<<<< HEAD
     @ManyToOne
     @NotNull(message = "{notnull}")
     private Setor setor;
@@ -32,6 +41,25 @@ public class Vaga extends AbstractEntity {
     private SituacaoVagaEnum situacao;
     @ManyToMany(mappedBy = "vagas", fetch = FetchType.LAZY)
     private List<Pagamento> pagamentos;
+=======
+
+    @ManyToOne
+    @NotNull(message = "{notnull}")
+    private Setor setor;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss", locale = "pt-br", timezone = "America/Recife")
+    private Calendar dhOcupacao;
+
+    @Enumerated(EnumType.ORDINAL)
+    @JsonFormat(shape = JsonFormat.Shape.OBJECT)
+    @JsonDeserialize(using = SituacaoDeserialize.class)
+    private SituacaoVagaEnum situacao;
+
+    @ManyToMany(mappedBy = "vagas", fetch = FetchType.LAZY)
+    private List<Pagamento> pagamentos;
+
+>>>>>>> ajustes
     @Pattern(regexp = "^([A-Z]{3})([0-9]{4}$)", message = "{patterplaca}")
     private String placaVeiculo;
 

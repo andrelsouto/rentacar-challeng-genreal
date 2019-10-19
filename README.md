@@ -35,6 +35,7 @@ Métodos a serem criados:
 - Monitoramento da API
 - Front-end em um framework à sua escolha
 
+<<<<<<< HEAD
 # Detalhe da Solução
 Repositório do projeto: https://github.com/andrelsouto/rentacar-challeng-genreal
 Rodando no heroku link: https://rentacar-challenge-general.herokuapp.com/#/cadastro/setor
@@ -59,3 +60,11 @@ Rodar o Front - instalar as dependencias através do comando 'npm install' e exe
     -Requisitos
         Node 10
         Angular/cli
+=======
+# Como entregar o desafio?
+- Faça um fork desse repositório e mande o link de clonagem para rh@vsoft.com.br.
+- Troque o item final (*Como entregar o desafio?*) por *Detalhe da solução*, onde você explicará as decisões de arquitetura que tomou e como executar seu projeto.
+- Faça ao menos um *push* ou *pull request* no seu fork com o código fonte da sua solução até a data solicitada por e-mail.
+- Caso seja selecionado, você será convocado para apresentar sua solução presencialmente.
+- Em caso de vaga de front-end, e que não se tenha conhecimento de back-end, pode-se usar um serviço de mocking gratuito como [mockAPI](https://www.mockapi.io) para simular o back-end.
+>>>>>>> ajustes

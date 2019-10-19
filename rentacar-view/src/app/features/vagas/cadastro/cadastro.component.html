@@ -2,6 +2,7 @@
     <rent-card @.disabled>
         <h5 class="card-title" header>
             <i class="fa fa-arrow-left voltar" (click)="voltarCard()"></i>
+<<<<<<< HEAD
             Cadastro
         </h5>
         <form body>
@@ -9,6 +10,16 @@
                 <label>Placa</label>
                 <input type="text" class="form-control">
             </div>
+=======
+            Estacionar
+        </h5>
+        <form body #form="ngForm" (ngSubmit)="ocuparVaga(vagaParaOcupar)">
+            <div class="form-group">
+                <label>Placa</label>
+                <input type="text" [(ngModel)]="vagaParaOcupar.placaVeiculo" placeholder="AAA0000" name="placaVeiculo" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-info">Concluir</button>
+>>>>>>> ajustes
         </form>
     </rent-card>
 </div>

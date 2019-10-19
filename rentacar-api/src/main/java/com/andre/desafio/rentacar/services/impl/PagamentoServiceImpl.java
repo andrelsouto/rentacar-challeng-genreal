@@ -72,6 +72,11 @@ public class PagamentoServiceImpl extends GenericServiceImpl<PagamentoRepository
         p = getRepository().save(p);
         vagaService.liberarEstacionamento(vaga);
         getModelMapper().map(p, pagamento);
+<<<<<<< HEAD
+=======
+        pagamento.getVagas().get(0).setDhOcupacao(null);
+        pagamento.getVagas().get(0).setSituacao(SituacaoVagaEnum.LIVRE);
+>>>>>>> ajustes
         return pagamento;
     }
 
