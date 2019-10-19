@@ -29,7 +29,7 @@ export class VagaComponent implements OnInit {
 
   cadastrar(vaga: Vaga){
     this.vagaService.cadastrar(vaga).subscribe(() => {
-      this.vaga = {};
+      this.vaga = { setor: { } };
       this.css = 'alert alert-success';
       this.message = 'Cadastro efetuado com sucesso';
     }, () => {

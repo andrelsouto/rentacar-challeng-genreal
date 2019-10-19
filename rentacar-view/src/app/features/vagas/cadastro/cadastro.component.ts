@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-=======
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 import { VagaService } from './../../../services/vaga.service';
 import { Vaga } from './../../../models/vaga';
->>>>>>> ajustes
 import { rotateXAnimation } from 'src/app/shared/animations/rotate-x.animation';
 
 @Component({
@@ -18,21 +13,14 @@ import { rotateXAnimation } from 'src/app/shared/animations/rotate-x.animation';
 export class CadastroComponent implements OnInit {
 
   @Output() voltar = new EventEmitter<any>();
-<<<<<<< HEAD
-
-  constructor() { }
-=======
   @Output() ocupacao = new EventEmitter<Vaga>();
   @Input('vaga') vagaParaOcupar: Vaga;
 
   constructor(private vagaService: VagaService) { }
->>>>>>> ajustes
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
   ocuparVaga(vaga: Vaga) {
     this.vagaService.ocupar(vaga).subscribe((resp: Vaga) => {
       this.vagaParaOcupar = resp;
@@ -41,7 +29,6 @@ export class CadastroComponent implements OnInit {
     });
   }
 
->>>>>>> ajustes
   voltarCard() {
     this.voltar.emit();
   }

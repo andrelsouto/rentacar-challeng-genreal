@@ -19,10 +19,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-<<<<<<< HEAD
-=======
 import javax.validation.ConstraintViolationException;
->>>>>>> ajustes
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;

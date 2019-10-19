@@ -22,17 +22,11 @@ public class Pagamento extends AbstractEntity {
 
     @NotNull(message = "{notnull}")
     private Double valor;
-<<<<<<< HEAD
-    @Temporal(TemporalType.DATE)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-br", timezone = "America/Recife")
-    private Calendar dtPagamento;
-=======
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-br", timezone = "America/Recife")
     private Calendar dtPagamento;
 
->>>>>>> ajustes
     @NotNull(message = "{notnull}")
     @ManyToMany
     private List<Vaga> vagas;
