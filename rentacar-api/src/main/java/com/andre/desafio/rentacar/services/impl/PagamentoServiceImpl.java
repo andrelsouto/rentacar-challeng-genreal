@@ -67,7 +67,7 @@ public class PagamentoServiceImpl extends GenericServiceImpl<PagamentoRepository
         pagamento.setTroco(pagamento.getTotalAPago() - valorAPagar.getTotalAPagar());
 
         pagamento.setDtPagamento(Calendar.getInstance());
-        pagamento.setValor(pagamento.getTotalAPago());
+        pagamento.setValor(valorAPagar.getTotalAPagar());
         Pagamento p = getModelMapper().map(pagamento, Pagamento.class);
         p = getRepository().save(p);
         vagaService.liberarEstacionamento(vaga);
